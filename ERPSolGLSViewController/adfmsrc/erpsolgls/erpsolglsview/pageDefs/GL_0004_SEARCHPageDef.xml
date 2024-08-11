@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="GL_0004_SEARCHPageDef"
+                Package="erpsolgls.erpsolglsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="VoucherCRUD" RangeSize="25" DataControl="ERPSolGLSAppModuleDataControl" id="VoucherCRUDIterator"/>
+    <searchRegion Criteria="VoucherViewFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="VoucherCRUDIterator" id="VoucherViewFindVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VoucherCRUDIterator" id="VoucherCRUD">
+      <nodeDefinition DefName="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherView" Name="VoucherCRUD0">
+        <AttrNames>
+          <Item Value="VoucherNo"/>
+          <Item Value="VoucherDate"/>
+          <Item Value="VoucherType"/>
+          <Item Value="LocCode"/>
+          <Item Value="txtLocationName"/>
+          <Item Value="ChequeNo"/>
+          <Item Value="ChequeDate"/>
+          <Item Value="Particulars"/>
+          <Item Value="RefNo"/>
+          <Item Value="SubmitVoucherNo"/>
+          <Item Value="SubmitVoucherDate"/>
+          <Item Value="Submit"/>
+          <Item Value="BankRefNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

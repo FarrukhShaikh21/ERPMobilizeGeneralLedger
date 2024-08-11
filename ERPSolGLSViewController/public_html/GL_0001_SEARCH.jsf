@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="GL_0001_SEARCH.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="ChartOfAcc" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.ChartOfAccViewFindVCQuery.queryDescriptor}"
+                              model="#{bindings.ChartOfAccViewFindVCQuery.queryModel}"
+                              queryListener="#{bindings.ChartOfAccViewFindVCQuery.processQuery}"
+                              queryOperationListener="#{bindings.ChartOfAccViewFindVCQuery.processQueryOperation}"
+                              resultComponentId="::resId1" modeChangeVisible="false" saveQueryMode="hidden"/>
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                            <af:button text="Back To Chart Of Account" id="b1" action="ERP-ACT-GL-0001-SEARCH-BACK"
+                                       icon="#{resource['images:imgExitForm.png']}"/>
+                        </af:toolbar>
+                    </f:facet>
+                </af:panelHeader>
+                <af:table value="#{bindings.ChartOfAccCRUD.collectionModel}" var="row"
+                          rows="#{bindings.ChartOfAccCRUD.rangeSize}"
+                          emptyText="#{bindings.ChartOfAccCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.ChartOfAccCRUD.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.ChartOfAccCRUD.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.ChartOfAccCRUD.rangeSize}" id="resId1"
+                          columnStretching="resId1c6">
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.GlnatureOfAC.label}" id="resId1c1">
+                        <af:link text="#{row.GlnatureOfAC}" id="l1" partialSubmit="true"
+                                 action="ERP-ACT-GL-0001-SEARCH-BACK"/>
+                        <af:outputText value="#{row.GlnatureOfAC}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.GlnatureOfAC.tooltip}" id="ot1"
+                                       rendered="false"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.GlbroadCategory.label}" id="resId1c2">
+                        <af:outputText value="#{row.GlbroadCategory}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.GlbroadCategory.tooltip}" id="ot2"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.GlcontrolAC.label}" id="resId1c3">
+                        <af:outputText value="#{row.GlcontrolAC}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.GlcontrolAC.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.GlsubControlAC.label}" id="resId1c4">
+                        <af:outputText value="#{row.GlsubControlAC}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.GlsubControlAC.tooltip}" id="ot4"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.GlsubsidaryAC.label}" id="resId1c5">
+                        <af:outputText value="#{row.GlsubsidaryAC}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.GlsubsidaryAC.tooltip}" id="ot5"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.Description.label}" id="resId1c6">
+                        <af:outputText value="#{row.Description}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.Description.tooltip}" id="ot6"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.CoaType.label}" id="resId1c7">
+                        <af:selectOneChoice value="#{row.bindings.CoaType.inputValue}"
+                                            label="#{row.bindings.CoaType.label}"
+                                            required="#{bindings.ChartOfAccCRUD.hints.CoaType.mandatory}"
+                                            shortDesc="#{bindings.ChartOfAccCRUD.hints.CoaType.tooltip}" readOnly="true"
+                                            id="soc1">
+                            <f:selectItems value="#{row.bindings.CoaType.items}" id="si1"/>
+                            <f:validator binding="#{row.bindings.CoaType.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.RestrictGlCode.label}" id="resId1c8">
+                        <af:selectOneChoice value="#{row.bindings.RestrictGlCode.inputValue}"
+                                            label="#{row.bindings.RestrictGlCode.label}"
+                                            required="#{bindings.ChartOfAccCRUD.hints.RestrictGlCode.mandatory}"
+                                            shortDesc="#{bindings.ChartOfAccCRUD.hints.RestrictGlCode.tooltip}"
+                                            readOnly="true" id="soc2">
+                            <f:selectItems value="#{row.bindings.RestrictGlCode.items}" id="si2"/>
+                            <f:validator binding="#{row.bindings.RestrictGlCode.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.OldGlCode.label}" id="resId1c9">
+                        <af:outputText value="#{row.OldGlCode}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.OldGlCode.tooltip}" id="ot7"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.Remarks1.label}" id="resId1c10">
+                        <af:outputText value="#{row.Remarks1}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.Remarks1.tooltip}" id="ot8"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ChartOfAccCRUD.hints.Remarks2.label}" id="resId1c11">
+                        <af:outputText value="#{row.Remarks2}"
+                                       shortDesc="#{bindings.ChartOfAccCRUD.hints.Remarks2.tooltip}" id="ot9"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

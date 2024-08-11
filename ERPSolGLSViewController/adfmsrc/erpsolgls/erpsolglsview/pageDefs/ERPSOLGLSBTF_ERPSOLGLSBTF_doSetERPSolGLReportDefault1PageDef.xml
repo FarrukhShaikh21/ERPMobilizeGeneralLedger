@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47"
+                id="ERPSOLGLSBTF_ERPSOLGLSBTF_doSetERPSolGLReportDefault1PageDef"
+                Package="erpsolgls.erpsolglsview.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="doSetERPSolGLReportDefault" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSetERPSolGLReportDefault" IsViewObjectMethod="true"
+                  DataControl="ERPSolGLSAppModuleDataControl"
+                  InstanceName="data.ERPSolGLSAppModuleDataControl.VwGeneralLedgerReportRO"
+                  ReturnName="data.ERPSolGLSAppModuleDataControl.methodResults.doSetERPSolGLReportDefault_ERPSolGLSAppModuleDataControl_VwGeneralLedgerReportRO_doSetERPSolGLReportDefault_result"/>
+  </bindings>
+</pageDefinition>

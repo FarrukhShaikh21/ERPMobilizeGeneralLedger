@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="GL_0004_SEARCH.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Voucher" id="ph2">
+          <af:query id="qryId1" headerText="Search" disclosed="true"
+                    value="#{bindings.VoucherViewFindVCQuery.queryDescriptor}"
+                    model="#{bindings.VoucherViewFindVCQuery.queryModel}"
+                    queryListener="#{bindings.VoucherViewFindVCQuery.processQuery}"
+                    queryOperationListener="#{bindings.VoucherViewFindVCQuery.processQueryOperation}"
+                    saveQueryMode="hidden" resultComponentId="::t1" rows="4" maxColumns="2" modeChangeVisible="false"/>
+          <af:table value="#{bindings.VoucherCRUD.collectionModel}" var="row" rows="#{bindings.VoucherCRUD.rangeSize}"
+                    emptyText="#{bindings.VoucherCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    rowBandingInterval="0" selectedRowKeys="#{bindings.VoucherCRUD.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.VoucherCRUD.collectionModel.makeCurrent}" rowSelection="single"
+                    fetchSize="#{bindings.VoucherCRUD.rangeSize}" id="t1" styleClass="AFStretchWidth">
+            <af:column headerText="#{bindings.VoucherCRUD.hints.VoucherNo.label}" id="c1">
+              <af:link text="#{row.bindings.VoucherNo.inputValue}" id="l1" partialSubmit="true"
+                       action="ERP-ACT-GL-0004-SEARCH-BACK"/>
+              <af:inputText value="#{row.bindings.VoucherNo.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.VoucherNo.label}"
+                            required="#{bindings.VoucherCRUD.hints.VoucherNo.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.VoucherNo.displayWidth}"
+                            maximumLength="#{bindings.VoucherCRUD.hints.VoucherNo.precision}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.VoucherNo.tooltip}" id="it1" readOnly="true"
+                            rendered="false">
+                <f:validator binding="#{row.bindings.VoucherNo.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.VoucherDate.label}" id="c2">
+              <af:inputDate value="#{row.bindings.VoucherDate.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.VoucherDate.label}"
+                            required="#{bindings.VoucherCRUD.hints.VoucherDate.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.VoucherDate.displayWidth}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.VoucherDate.tooltip}" id="id1" readOnly="true">
+                <f:validator binding="#{row.bindings.VoucherDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.VoucherCRUD.hints.VoucherDate.format}"/>
+              </af:inputDate>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.VoucherType.label}" id="c3">
+              <af:selectOneChoice value="#{row.bindings.VoucherType.inputValue}"
+                                  label="#{row.bindings.VoucherType.label}"
+                                  required="#{bindings.VoucherCRUD.hints.VoucherType.mandatory}"
+                                  shortDesc="#{bindings.VoucherCRUD.hints.VoucherType.tooltip}" id="soc1"
+                                  readOnly="true">
+                <f:selectItems value="#{row.bindings.VoucherType.items}" id="si1"/>
+                <f:validator binding="#{row.bindings.VoucherType.validator}"/>
+              </af:selectOneChoice>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.LocCode.label}" id="c4">
+              <af:inputText value="#{row.bindings.LocCode.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.LocCode.label}"
+                            required="#{bindings.VoucherCRUD.hints.LocCode.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.LocCode.displayWidth}"
+                            maximumLength="#{bindings.VoucherCRUD.hints.LocCode.precision}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.LocCode.tooltip}" id="it2" readOnly="true">
+                <f:validator binding="#{row.bindings.LocCode.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.txtLocationName.label}" id="c5">
+              <af:inputComboboxListOfValues id="txtLocationNameId"
+                                            popupTitle="Search and Select: #{bindings.VoucherCRUD.hints.txtLocationName.label}"
+                                            value="#{row.bindings.txtLocationName.inputValue}"
+                                            model="#{row.bindings.txtLocationName.listOfValuesModel}"
+                                            required="#{bindings.VoucherCRUD.hints.txtLocationName.mandatory}"
+                                            columns="#{bindings.VoucherCRUD.hints.txtLocationName.displayWidth}"
+                                            shortDesc="#{bindings.VoucherCRUD.hints.txtLocationName.tooltip}"
+                                            readOnly="true">
+                <f:validator binding="#{row.bindings.txtLocationName.validator}"/>
+              </af:inputComboboxListOfValues>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.ChequeNo.label}" id="c6">
+              <af:inputText value="#{row.bindings.ChequeNo.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.ChequeNo.label}"
+                            required="#{bindings.VoucherCRUD.hints.ChequeNo.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.ChequeNo.displayWidth}"
+                            maximumLength="#{bindings.VoucherCRUD.hints.ChequeNo.precision}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.ChequeNo.tooltip}" id="it3" readOnly="true">
+                <f:validator binding="#{row.bindings.ChequeNo.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.ChequeDate.label}" id="c7" width="80" displayIndex="-1">
+              <af:inputDate value="#{row.bindings.ChequeDate.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.ChequeDate.label}"
+                            required="#{bindings.VoucherCRUD.hints.ChequeDate.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.ChequeDate.displayWidth}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.ChequeDate.tooltip}" id="id2" readOnly="true">
+                <f:validator binding="#{row.bindings.ChequeDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.VoucherCRUD.hints.ChequeDate.format}"/>
+              </af:inputDate>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.Particulars.label}" id="c8">
+              <af:inputText value="#{row.bindings.Particulars.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.Particulars.label}"
+                            required="#{bindings.VoucherCRUD.hints.Particulars.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.Particulars.displayWidth}"
+                            maximumLength="#{bindings.VoucherCRUD.hints.Particulars.precision}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.Particulars.tooltip}" id="it4" readOnly="true">
+                <f:validator binding="#{row.bindings.Particulars.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.RefNo.label}" id="c9">
+              <af:inputText value="#{row.bindings.RefNo.inputValue}" label="#{bindings.VoucherCRUD.hints.RefNo.label}"
+                            required="#{bindings.VoucherCRUD.hints.RefNo.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.RefNo.displayWidth}"
+                            maximumLength="#{bindings.VoucherCRUD.hints.RefNo.precision}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.RefNo.tooltip}" id="it5" readOnly="true">
+                <f:validator binding="#{row.bindings.RefNo.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.BankRefNo.label}" id="c13">
+              <af:inputText value="#{row.bindings.BankRefNo.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.BankRefNo.label}"
+                            required="#{bindings.VoucherCRUD.hints.BankRefNo.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.BankRefNo.displayWidth}"
+                            maximumLength="#{bindings.VoucherCRUD.hints.BankRefNo.precision}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.BankRefNo.tooltip}" id="it7" readOnly="true">
+                <f:validator binding="#{row.bindings.BankRefNo.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.SubmitVoucherNo.label}" id="c10">
+              <af:inputText value="#{row.bindings.SubmitVoucherNo.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.SubmitVoucherNo.label}"
+                            required="#{bindings.VoucherCRUD.hints.SubmitVoucherNo.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.SubmitVoucherNo.displayWidth}"
+                            maximumLength="#{bindings.VoucherCRUD.hints.SubmitVoucherNo.precision}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.SubmitVoucherNo.tooltip}" id="it6" readOnly="true">
+                <f:validator binding="#{row.bindings.SubmitVoucherNo.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.SubmitVoucherDate.label}" id="c11">
+              <af:inputDate value="#{row.bindings.SubmitVoucherDate.inputValue}"
+                            label="#{bindings.VoucherCRUD.hints.SubmitVoucherDate.label}"
+                            required="#{bindings.VoucherCRUD.hints.SubmitVoucherDate.mandatory}"
+                            columns="#{bindings.VoucherCRUD.hints.SubmitVoucherDate.displayWidth}"
+                            shortDesc="#{bindings.VoucherCRUD.hints.SubmitVoucherDate.tooltip}" id="id3"
+                            readOnly="true">
+                <f:validator binding="#{row.bindings.SubmitVoucherDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.VoucherCRUD.hints.SubmitVoucherDate.format}"/>
+              </af:inputDate>
+            </af:column>
+            <af:column headerText="#{bindings.VoucherCRUD.hints.Submit.label}" id="c12">
+              <af:selectOneChoice value="#{row.bindings.Submit.inputValue}" label="#{row.bindings.Submit.label}"
+                                  required="#{bindings.VoucherCRUD.hints.Submit.mandatory}"
+                                  shortDesc="#{bindings.VoucherCRUD.hints.Submit.tooltip}" id="soc2" readOnly="true">
+                <f:selectItems value="#{row.bindings.Submit.items}" id="si2"/>
+                <f:validator binding="#{row.bindings.Submit.validator}"/>
+              </af:selectOneChoice>
+            </af:column>
+          </af:table>
+          <f:facet name="toolbar">
+            <af:toolbar id="t2">
+              <af:link text="Back To Voucher Entry" id="l2" icon="#{resource['images:imgExitForm.png']}"
+                       action="ERP-ACT-GL-0004-SEARCH-BACK"/>
+            </af:toolbar>
+          </f:facet>
+        </af:panelHeader>
+      </af:panelGroupLayout>
+    </af:form>
+  </af:document>
+</f:view>

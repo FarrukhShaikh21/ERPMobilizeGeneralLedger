@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="GL_0001PageDef"
+                Package="erpsolgls.erpsolglsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="ChartOfAccCRUD" RangeSize="25" DataControl="ERPSolGLSAppModuleDataControl"
+              id="ChartOfAccCRUDIterator"/>
+    <iterator Binds="CoaLocMapDetCRUD" RangeSize="25" DataControl="ERPSolGLSAppModuleDataControl"
+              id="CoaLocMapDetCRUDIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="GlnatureOfAC">
+      <AttrNames>
+        <Item Value="GlnatureOfAC"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="GlbroadCategory">
+      <AttrNames>
+        <Item Value="GlbroadCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="GlcontrolAC">
+      <AttrNames>
+        <Item Value="GlcontrolAC"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="GlsubControlAC">
+      <AttrNames>
+        <Item Value="GlsubControlAC"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="GlsubsidaryAC">
+      <AttrNames>
+        <Item Value="GlsubsidaryAC"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChartOfAccCRUDIterator" StaticList="false" Uses="LovCoaType" id="CoaType" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="OldGlCode">
+      <AttrNames>
+        <Item Value="OldGlCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="Remarks1">
+      <AttrNames>
+        <Item Value="Remarks1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="Remarks2">
+      <AttrNames>
+        <Item Value="Remarks2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChartOfAccCRUDIterator" id="RestrictGlCode">
+      <AttrNames>
+        <Item Value="RestrictGlCode"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ChartOfAccCRUDIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ChartOfAccCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ChartOfAccCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ChartOfAccCRUDIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolGLSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolGLSAppModuleDataControl"/>
+    <action IterBinding="ChartOfAccCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="ChartOfAccCRUDIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="CoaLocMapDetCRUDIterator" id="CoaLocMapDetCRUD">
+      <nodeDefinition DefName="erpsolgls.erpsolglsmodel.erpsolglsvo.CoaLocMapView" Name="CoaLocMapDetCRUD0">
+        <AttrNames>
+          <Item Value="Locationid"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="CoaLocMapDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CoaLocMapDetCRUDIterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

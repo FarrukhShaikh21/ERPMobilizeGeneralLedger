@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="GL_0045PageDef"
+                Package="erpsolgls.erpsolglsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="VwGeneralLedgerReportRO" RangeSize="25" DataControl="ERPSolGLSAppModuleDataControl"
+              id="VwGeneralLedgerReportROIterator"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="VwGeneralLedgerReportROIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <listOfValues IterBinding="VwGeneralLedgerReportROIterator" StaticList="false" Uses="LovtxtDocumentId"
+                  id="txtDocumentId"/>
+    <list IterBinding="VwGeneralLedgerReportROIterator" StaticList="false" Uses="LovtxtCompanyCode"
+          id="txtCompanyCode" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="VwGeneralLedgerReportROIterator" id="txtLocationId">
+      <AttrNames>
+        <Item Value="txtLocationId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VwGeneralLedgerReportROIterator" id="txtDescription">
+      <AttrNames>
+        <Item Value="txtDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VwGeneralLedgerReportROIterator" id="txtVoucherseq">
+      <AttrNames>
+        <Item Value="txtVoucherseq"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VwGeneralLedgerReportROIterator" id="Pk">
+      <AttrNames>
+        <Item Value="Pk"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VwGeneralLedgerReportROIterator" id="txtDocTypeId">
+      <AttrNames>
+        <Item Value="txtDocTypeId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="doSetERPSolGLDocumentUnsubmit" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSetERPSolGLDocumentUnsubmit" IsViewObjectMethod="true"
+                  DataControl="ERPSolGLSAppModuleDataControl"
+                  InstanceName="data.ERPSolGLSAppModuleDataControl.VwGeneralLedgerReportRO"
+                  ReturnName="data.ERPSolGLSAppModuleDataControl.methodResults.doSetERPSolGLDocumentUnsubmit_ERPSolGLSAppModuleDataControl_VwGeneralLedgerReportRO_doSetERPSolGLDocumentUnsubmit_result"/>
+  </bindings>
+</pageDefinition>

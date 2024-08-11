@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="GL_0045.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+        <f:facet name="erptempmain">
+          <af:panelFormLayout id="pfl1">
+            <af:inputText value="#{bindings.txtDocTypeId.inputValue}" label="#{bindings.txtDocTypeId.hints.label}"
+                          required="#{bindings.txtDocTypeId.hints.mandatory}"
+                          columns="#{bindings.txtDocTypeId.hints.displayWidth}"
+                          maximumLength="#{bindings.txtDocTypeId.hints.precision}"
+                          shortDesc="#{bindings.txtDocTypeId.hints.tooltip}" id="it5" rendered="false">
+              <f:validator binding="#{bindings.txtDocTypeId.validator}"/>
+            </af:inputText>
+            <af:selectOneChoice value="#{bindings.txtCompanyCode.inputValue}" label="#{bindings.txtCompanyCode.label}"
+                                required="#{bindings.txtCompanyCode.hints.mandatory}"
+                                shortDesc="#{bindings.txtCompanyCode.hints.tooltip}" id="soc1" disabled="true">
+              <f:selectItems value="#{bindings.txtCompanyCode.items}" id="si1"/>
+              <f:validator binding="#{bindings.txtCompanyCode.validator}"/>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.txtLocationId.inputValue}" label="#{bindings.txtLocationId.hints.label}"
+                          required="#{bindings.txtLocationId.hints.mandatory}"
+                          columns="#{bindings.txtLocationId.hints.displayWidth}"
+                          maximumLength="#{bindings.txtLocationId.hints.precision}"
+                          shortDesc="#{bindings.txtLocationId.hints.tooltip}" partialTriggers="txtLocationNameId"
+                          id="it1" rendered="false">
+              <f:validator binding="#{bindings.txtLocationId.validator}"/>
+            </af:inputText>
+            <af:inputComboboxListOfValues id="txtLocationNameId"
+                                          popupTitle="Search and Select: #{bindings.txtLocationName.hints.label}"
+                                          value="#{bindings.txtLocationName.inputValue}"
+                                          label="#{bindings.txtLocationName.hints.label}"
+                                          model="#{bindings.txtLocationName.listOfValuesModel}"
+                                          required="#{bindings.txtLocationName.hints.mandatory}"
+                                          columns="#{bindings.txtLocationName.hints.displayWidth}"
+                                          shortDesc="#{bindings.txtLocationName.hints.tooltip}">
+              <f:validator binding="#{bindings.txtLocationName.validator}"/>
+            </af:inputComboboxListOfValues>
+            <af:inputComboboxListOfValues id="txtDocumentIdId"
+                                          popupTitle="Search and Select: #{bindings.txtDocumentId.hints.label}"
+                                          value="#{bindings.txtDocumentId.inputValue}"
+                                          label="#{bindings.txtDocumentId.hints.label}"
+                                          model="#{bindings.txtDocumentId.listOfValuesModel}"
+                                          required="#{bindings.txtDocumentId.hints.mandatory}"
+                                          columns="#{bindings.txtDocumentId.hints.displayWidth}"
+                                          shortDesc="#{bindings.txtDocumentId.hints.tooltip}" autoSubmit="true">
+              <f:validator binding="#{bindings.txtDocumentId.validator}"/>
+              <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolGLSPageFlowBean.doERPSolGetAutoSuggestedGLUnsubmitDoc}"/>
+            </af:inputComboboxListOfValues>
+            <af:inputText value="#{bindings.txtDescription.inputValue}" label="#{bindings.txtDescription.hints.label}"
+                          required="#{bindings.txtDescription.hints.mandatory}"
+                          columns="#{bindings.txtDescription.hints.displayWidth}"
+                          maximumLength="#{bindings.txtDescription.hints.precision}"
+                          shortDesc="#{bindings.txtDescription.hints.tooltip}" partialTriggers="txtDocumentIdId"
+                          id="it2" readOnly="true">
+              <f:validator binding="#{bindings.txtDescription.validator}"/>
+            </af:inputText>
+            <af:button actionListener="#{bindings.doSetERPSolGLDocumentUnsubmit.execute}"
+                       text="Unsupervise Document"
+                       disabled="#{!bindings.doSetERPSolGLDocumentUnsubmit.enabled}" id="b1"/>
+            <af:inputText value="#{bindings.txtVoucherseq.inputValue}" label="#{bindings.txtVoucherseq.hints.label}"
+                          required="#{bindings.txtVoucherseq.hints.mandatory}"
+                          columns="#{bindings.txtVoucherseq.hints.displayWidth}"
+                          maximumLength="#{bindings.txtVoucherseq.hints.precision}"
+                          shortDesc="#{bindings.txtVoucherseq.hints.tooltip}" partialTriggers="txtDocumentIdId"
+                          id="it3" rendered="false">
+              <f:validator binding="#{bindings.txtVoucherseq.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.txtVoucherseq.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Pk.inputValue}" label="#{bindings.Pk.hints.label}"
+                          required="#{bindings.Pk.hints.mandatory}" columns="#{bindings.Pk.hints.displayWidth}"
+                          maximumLength="#{bindings.Pk.hints.precision}" shortDesc="#{bindings.Pk.hints.tooltip}"
+                          id="it4" rendered="false">
+              <f:validator binding="#{bindings.Pk.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.Pk.format}"/>
+            </af:inputText>
+          </af:panelFormLayout>
+        </f:facet>
+        <f:facet name="erptempleft"/>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
+</f:view>

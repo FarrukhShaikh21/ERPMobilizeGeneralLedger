@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ERPSolGLSAppModule"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="VoucherCRUD"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherView">
+    <ViewCriteriaUsage
+      Name="VoucherSalesTerritoryWiseVC"
+      FullName="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherView.VoucherSalesTerritoryWiseVC"/>
+    <ViewCriteriaUsage
+      Name="VoucherViewUserWiseVC"
+      FullName="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherView.VoucherViewUserWiseVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_USERID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode()]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewUsage>
+  <ViewUsage
+    Name="VoucherDetViewDetCRUD"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView"/>
+  <ViewUsage
+    Name="VWChartOfAccountAutoSuggestRO"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWChartOfAccountQVO"/>
+  <ViewUsage
+    Name="VWCostCenterAutoSuggestRO"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWCostCenterQVO">
+    <ViewCriteriaUsage
+      Name="VWCostCenterQVOLastLevelCostCenterVC"
+      FullName="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWCostCenterQVO.VWCostCenterQVOLastLevelCostCenterVC"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="AllLocationsAutoSuggestRO"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsvo.AllLocationsView"/>
+  <ViewUsage
+    Name="VWGLDebitGLAutoSuggestRO"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWGLDebitGLQVO"/>
+  <ViewUsage
+    Name="VwGeneralLedgerReportRO"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsqvo.VwGeneralLedgerReportQVO"/>
+  <ViewUsage
+    Name="ChartOfAccCRUD"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView"/>
+  <ViewUsage
+    Name="CoaLocMapDetCRUD"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsvo.CoaLocMapView"/>
+  <ViewUsage
+    Name="VWGLDocumentIdForUnsubmitAutoSuggestRO"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWGLDocumentIdForUnsubmitQVO"/>
+  <ViewLinkUsage
+    Name="FkVoucherDetVoucherSeqLink1"
+    ViewLinkObjectName="erpsolgls.erpsolglsmodel.erpsolglsvo.FkVoucherDetVoucherSeqLink"
+    SrcViewUsageName="erpsolgls.erpsolglsmodel.erpsolglsam.ERPSolGLSAppModule.VoucherCRUD"
+    DstViewUsageName="erpsolgls.erpsolglsmodel.erpsolglsam.ERPSolGLSAppModule.VoucherDetViewDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ChartOfAccountCoaLocMapLink1"
+    ViewLinkObjectName="erpsolgls.erpsolglsmodel.erpsolglslink.ChartOfAccountCoaLocMapLink"
+    SrcViewUsageName="erpsolgls.erpsolglsmodel.erpsolglsam.ERPSolGLSAppModule.ChartOfAccCRUD"
+    DstViewUsageName="erpsolgls.erpsolglsmodel.erpsolglsam.ERPSolGLSAppModule.CoaLocMapDetCRUD"
+    Reversed="false"/>
+</AppModule>

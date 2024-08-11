@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SoSalesTerritorySysUserTerritorySalesTerritoryIdLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpsolgls.erpsolglsmodel.erpsolglsassoc.SoSalesTerritorySysUserTerritorySalesTerritoryIdAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolgls.erpsolglsmodel.erpsolglslink.SoSalesTerritorySysUserTerritorySalesTerritoryIdLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="SoSalesTerritoryVO"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglsvo.SoSalesTerritoryVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="SoSalesTerritoryVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.SoSalesTerritoryVO.Salesterritoryid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SysUserSalesTerritoryView"
+    Cardinality="-1"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglsvo.SysUserSalesTerritoryView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SysUserSalesTerritoryView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.SysUserSalesTerritoryView.Salesterritoryid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolgls.erpsolglsmodel.ERPSolGLSModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

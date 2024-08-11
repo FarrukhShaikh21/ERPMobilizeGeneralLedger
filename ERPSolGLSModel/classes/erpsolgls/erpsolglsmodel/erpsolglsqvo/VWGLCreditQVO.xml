@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VWGLCreditQVO"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWGLCreditQVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="P_ADF_VOUCHER_TYPE"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="P_ADF_LOC_CODE"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="P_ADF_GL_V_TYPE"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="P_ADF_USERID"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression
+      trustMode="untrusted"
+      Name="expression"><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode()]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <SQLQuery><![CDATA[with vw_param as(  
+                select :P_ADF_VOUCHER_TYPE P_ADF_VOUCHER_TYPE,  
+                       :P_ADF_GL_V_TYPE P_ADF_GL_V_TYPE,  
+                       :P_ADF_LOC_CODE P_ADF_LOC_CODE  
+                 from dual  
+                 )        
+select A.GL_Code,                
+A.DESCRIPTION,            
+A.glnature_of_a_c,            
+A.glbroad_category,            
+A.glcontrol_a_c,              
+A.glsub_control_a_c,            
+A.glsubsidary_a_c            
+from VW_GL_CREDIT A , vw_param  
+WHERE A.LocationId = vw_param.P_ADF_LOC_CODE            
+AND ((NVL(A.COA_Type, 'JV') = 'JV' AND vw_param.P_ADF_GL_V_TYPE ='R' AND vw_param.P_ADF_VOUCHER_TYPE !='CNT') OR (NVL(A.COA_Type, 'JV') = vw_param.P_ADF_VOUCHER_TYPE AND vw_param.P_ADF_GL_V_TYPE ='P' AND vw_param.P_ADF_VOUCHER_TYPE !='CNT') OR (NVL(A.COA_Type, 'JV') in('BV', 'CV', 'PV') AND vw_param.P_ADF_VOUCHER_TYPE ='CNT'))    
+AND A.GL_CODE NOT IN(select UM.ACCOUNT_CODE from coa_user_map UM WHERE UM.USERID=:P_ADF_USERID) 
+AND a.GL_Code NOT IN            
+(Select R.gl_code                   
+From COA_LOC_MAP_Restrict R                   
+Where R.locationid = vw_param.P_ADF_LOC_CODE                   
+AND R.voucher_type = vw_param.P_ADF_VOUCHER_TYPE            
+AND R.restrict_side = 'C') ORDER BY A.DESCRIPTION]]></SQLQuery>
+  <ViewAttribute
+    Name="GlCode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GL_CODE"
+    Expression="GL_CODE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWGLCreditQVO.GlCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DESCRIPTION"
+    Expression="DESCRIPTION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWGLCreditQVO.Description_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlnatureOfAC"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GLNATURE_OF_A_C"
+    Expression="GLNATURE_OF_A_C"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlbroadCategory"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GLBROAD_CATEGORY"
+    Expression="GLBROAD_CATEGORY"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlcontrolAC"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GLCONTROL_A_C"
+    Expression="GLCONTROL_A_C"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlsubControlAC"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GLSUB_CONTROL_A_C"
+    Expression="GLSUB_CONTROL_A_C"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlsubsidaryAC"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GLSUBSIDARY_A_C"
+    Expression="GLSUBSIDARY_A_C"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="VWGLCreditFindVC"
+    ViewObjectName="erpsolgls.erpsolglsmodel.erpsolglsqvo.VWGLCreditQVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="VWGLCreditQVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="GlCode"
+        ViewAttribute="GlCode"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="VWGLCreditQVOCriteria_VWGLCreditQVOCriteria_row_0_Description"
+        ViewAttribute="Description"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GlCode"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolgls.erpsolglsmodel.ERPSolGLSModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

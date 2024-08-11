@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CostCenterVoucherDetCostCenterAssoc"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="CostCenter"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglseo.CostCenter"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="CostCenter"/>
+      <Attr Name="_foreignKey" Value="erpsolgls.erpsolglsmodel.erpsolglseo.CostCenter.SysC0015310"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CostCenter.Ccregion"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CostCenter.CcsubLocation"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CostCenter.Ccsubsidary"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="VoucherDet"
+    Cardinality="-1"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherDet">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="VoucherDet"/>
+      <Attr Name="_foreignKey" Value="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherDet.fk_VoucherDet1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherDet.Ccregion"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherDet.CcsubLocation"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherDet.Ccsubsidary"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

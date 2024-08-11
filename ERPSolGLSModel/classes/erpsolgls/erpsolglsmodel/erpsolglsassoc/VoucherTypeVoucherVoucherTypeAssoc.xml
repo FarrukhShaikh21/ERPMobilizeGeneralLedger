@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VoucherTypeVoucherVoucherTypeAssoc"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="VoucherType1"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherType"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="VoucherType1"/>
+      <Attr Name="_foreignKey" Value="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherType.SysC0015509"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.VoucherType.VoucherType"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Voucher"
+    Cardinality="-1"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglseo.Voucher">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Voucher"/>
+      <Attr Name="_foreignKey" Value="erpsolgls.erpsolglsmodel.erpsolglseo.Voucher.fk_Voucher1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.Voucher.VoucherType"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

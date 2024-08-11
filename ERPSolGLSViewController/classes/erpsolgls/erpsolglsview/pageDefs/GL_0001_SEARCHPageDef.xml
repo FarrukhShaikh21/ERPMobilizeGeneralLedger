@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="GL_0001_SEARCHPageDef"
+                Package="erpsolgls.erpsolglsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ChartOfAccCRUD" RangeSize="25" DataControl="ERPSolGLSAppModuleDataControl"
+              id="ChartOfAccCRUDIterator"/>
+    <searchRegion Criteria="ChartOfAccViewFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ChartOfAccCRUDIterator" id="ChartOfAccViewFindVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ChartOfAccCRUDIterator" id="ChartOfAccCRUD">
+      <nodeDefinition DefName="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView" Name="ChartOfAccCRUD0">
+        <AttrNames>
+          <Item Value="GlnatureOfAC"/>
+          <Item Value="GlbroadCategory"/>
+          <Item Value="GlcontrolAC"/>
+          <Item Value="GlsubControlAC"/>
+          <Item Value="GlsubsidaryAC"/>
+          <Item Value="Description"/>
+          <Item Value="CoaType"/>
+          <Item Value="RestrictGlCode"/>
+          <Item Value="OldGlCode"/>
+          <Item Value="Remarks1"/>
+          <Item Value="Remarks2"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

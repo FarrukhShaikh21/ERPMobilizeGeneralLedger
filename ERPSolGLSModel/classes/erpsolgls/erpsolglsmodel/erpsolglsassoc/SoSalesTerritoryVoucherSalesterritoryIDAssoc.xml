@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SoSalesTerritoryVoucherSalesterritoryIDAssoc"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="SoSalesTerritory"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglseo.SoSalesTerritory"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SoSalesTerritory"/>
+      <Attr Name="_foreignKey" Value="erpsolgls.erpsolglsmodel.erpsolglseo.SoSalesTerritory.XpksoSalesTerritory"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.SoSalesTerritory.Salesterritoryid"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Voucher"
+    Cardinality="-1"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglseo.Voucher">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Voucher"/>
+      <Attr Name="_foreignKey" Value="erpsolgls.erpsolglsmodel.erpsolglseo.Voucher.fk_Voucher2"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.Voucher.Salesterritoryid"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

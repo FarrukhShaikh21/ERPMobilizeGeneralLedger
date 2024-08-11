@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="erpsolgls.erpsolglsview" ClientType="Generic">
+  <pageMap>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@ExecuteQueryGLSTransaction"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@ExecuteQueryGLSSetup"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@ExecuteWithParamsReportGLS"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef11"/>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@ExecuteWithParaReportDetGLS"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef111"/>
+    <page path="/ERPSolGLSMain.jsf" usageId="erpsolgls_erpsolglsview_ERPSolGLSMainPageDef"/>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@RollbackBeforeFornGLS"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_RollbackPageDef"/>
+    <page path="/GL_0004.jsf" usageId="erpsolgls_erpsolglsview_GL_0004PageDef"/>
+    <page path="/GL_0004_SEARCH.jsf" usageId="erpsolgls_erpsolglsview_GL_0004_SEARCHPageDef"/>
+    <page path="/GL_0123.jsf" usageId="erpsolgls_erpsolglsview_GL_0123PageDef"/>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@doSetERPSolGLReportDefault"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLSBTF_ERPSOLGLSBTF_doSetERPSolGLReportDefaultPageDef"/>
+    <page path="/GL_0001.jsf" usageId="erpsolgls_erpsolglsview_GL_0001PageDef"/>
+    <page path="/GL_0001_SEARCH.jsf" usageId="erpsolgls_erpsolglsview_GL_0001_SEARCHPageDef"/>
+    <page path="/GL_0045.jsf" usageId="erpsolgls_erpsolglsview_GL_0045PageDef"/>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@doSetReportDefaultGL_0045"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLSBTF_ERPSOLGLSBTF_doSetERPSolGLReportDefault1PageDef"/>
+    <page path="/WEB-INF/ERPSOLGLSBTF.xml#ERPSOLGLSBTF@ExecuteWithParaReverseDetGLS"
+          usageId="erpsolgls_erpsolglsview_ERPSOLGLSBTF_ERPSOLGLSBTF_ExecuteWithParamsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef"/>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef1"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef1"/>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef11"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef11"/>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef111"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLS_ERPSOLGLS_ExecuteWithParamsPageDef111"/>
+    <page id="erpsolgls_erpsolglsview_ERPSolGLSMainPageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSolGLSMainPageDef"/>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLS_ERPSOLGLS_RollbackPageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLS_ERPSOLGLS_RollbackPageDef"/>
+    <page id="erpsolgls_erpsolglsview_GL_0004PageDef" path="erpsolgls.erpsolglsview.pageDefs.GL_0004PageDef"/>
+    <page id="erpsolgls_erpsolglsview_GL_0004_SEARCHPageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.GL_0004_SEARCHPageDef"/>
+    <page id="erpsolgls_erpsolglsview_GL_0123PageDef" path="erpsolgls.erpsolglsview.pageDefs.GL_0123PageDef"/>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLSBTF_ERPSOLGLSBTF_doSetERPSolGLReportDefaultPageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLSBTF_ERPSOLGLSBTF_doSetERPSolGLReportDefaultPageDef"/>
+    <page id="erpsolgls_erpsolglsview_GL_0001PageDef" path="erpsolgls.erpsolglsview.pageDefs.GL_0001PageDef"/>
+    <page id="erpsolgls_erpsolglsview_GL_0001_SEARCHPageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.GL_0001_SEARCHPageDef"/>
+    <page id="erpsolgls_erpsolglsview_GL_0045PageDef" path="erpsolgls.erpsolglsview.pageDefs.GL_0045PageDef"/>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLSBTF_ERPSOLGLSBTF_doSetERPSolGLReportDefault1PageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLSBTF_ERPSOLGLSBTF_doSetERPSolGLReportDefault1PageDef"/>
+    <page id="erpsolgls_erpsolglsview_ERPSOLGLSBTF_ERPSOLGLSBTF_ExecuteWithParamsPageDef"
+          path="erpsolgls.erpsolglsview.pageDefs.ERPSOLGLSBTF_ERPSOLGLSBTF_ExecuteWithParamsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolTempAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ERPSolGLSAppModuleDataControl" Package="erpsolgls.erpsolglsmodel.erpsolglsam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolGLSAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

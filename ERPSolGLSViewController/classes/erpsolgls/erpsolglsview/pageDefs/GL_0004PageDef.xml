@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="GL_0004PageDef"
+                Package="erpsolgls.erpsolglsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="VoucherCRUD" RangeSize="25" DataControl="ERPSolGLSAppModuleDataControl" id="VoucherCRUDIterator"/>
+    <iterator Binds="VoucherDetViewDetCRUD" RangeSize="25" DataControl="ERPSolGLSAppModuleDataControl"
+              id="VoucherDetViewDetCRUDIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="VoucherNo">
+      <AttrNames>
+        <Item Value="VoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="VoucherDate">
+      <AttrNames>
+        <Item Value="VoucherDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ChequeNo">
+      <AttrNames>
+        <Item Value="ChequeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ChequeDate">
+      <AttrNames>
+        <Item Value="ChequeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Particulars">
+      <AttrNames>
+        <Item Value="Particulars"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Cash">
+      <AttrNames>
+        <Item Value="Cash"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Hold">
+      <AttrNames>
+        <Item Value="Hold"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Tax">
+      <AttrNames>
+        <Item Value="Tax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Support">
+      <AttrNames>
+        <Item Value="Support"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="PrepareBy">
+      <AttrNames>
+        <Item Value="PrepareBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="PrepareDt">
+      <AttrNames>
+        <Item Value="PrepareDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="CheckBy">
+      <AttrNames>
+        <Item Value="CheckBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="CheckDt">
+      <AttrNames>
+        <Item Value="CheckDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="VerifyBy">
+      <AttrNames>
+        <Item Value="VerifyBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="VerifyDt">
+      <AttrNames>
+        <Item Value="VerifyDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ApproveBy">
+      <AttrNames>
+        <Item Value="ApproveBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ApproveDt">
+      <AttrNames>
+        <Item Value="ApproveDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Bookid">
+      <AttrNames>
+        <Item Value="Bookid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Branchid">
+      <AttrNames>
+        <Item Value="Branchid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Bankid">
+      <AttrNames>
+        <Item Value="Bankid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="AutoChequeNo">
+      <AttrNames>
+        <Item Value="AutoChequeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="RefNo">
+      <AttrNames>
+        <Item Value="RefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="SubmitVoucherNo">
+      <AttrNames>
+        <Item Value="SubmitVoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="SubmitVoucherDate">
+      <AttrNames>
+        <Item Value="SubmitVoucherDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Submit">
+      <AttrNames>
+        <Item Value="Submit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="SubmitBy">
+      <AttrNames>
+        <Item Value="SubmitBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="SubmitDate">
+      <AttrNames>
+        <Item Value="SubmitDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="AuditorCheck">
+      <AttrNames>
+        <Item Value="AuditorCheck"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="AuditRemarks">
+      <AttrNames>
+        <Item Value="AuditRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="IsMigrated">
+      <AttrNames>
+        <Item Value="IsMigrated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="MigratedDate">
+      <AttrNames>
+        <Item Value="MigratedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ParticularsRescue">
+      <AttrNames>
+        <Item Value="ParticularsRescue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="LocCurrcode">
+      <AttrNames>
+        <Item Value="LocCurrcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ExchangeRate">
+      <AttrNames>
+        <Item Value="ExchangeRate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="AuditRefNo">
+      <AttrNames>
+        <Item Value="AuditRefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ProjectId">
+      <AttrNames>
+        <Item Value="ProjectId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Lcno">
+      <AttrNames>
+        <Item Value="Lcno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="ParticularsRescue2">
+      <AttrNames>
+        <Item Value="ParticularsRescue2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="OtfEx">
+      <AttrNames>
+        <Item Value="OtfEx"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="RefDoctypeid">
+      <AttrNames>
+        <Item Value="RefDoctypeid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="RefVoucherNo">
+      <AttrNames>
+        <Item Value="RefVoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="VoucherCRUDIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createWithParams"
+            InstanceName="ERPSolGLSAppModuleDataControl.VoucherCRUD" DataControl="ERPSolGLSAppModuleDataControl">
+      <NamedData NDName="Particulars" NDValue="#{''}" NDType="java.lang.String"/>
+    </action>
+    <action IterBinding="VoucherCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <listOfValues IterBinding="VoucherCRUDIterator" StaticList="false" Uses="LovtxtLocationName" id="txtLocationName"/>
+    <action IterBinding="VoucherCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="VoucherCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolGLSAppModuleDataControl"/>
+    <list IterBinding="VoucherCRUDIterator" StaticList="false" Uses="LovVoucherType" id="VoucherType"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="VoucherDetViewDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createWithParams" InstanceName="ERPSolGLSAppModuleDataControl.VoucherDetViewDetCRUD"
+            DataControl="ERPSolGLSAppModuleDataControl">
+      <NamedData NDName="SNo" NDValue="#{''}" NDType="java.lang.String"/>
+    </action>
+    <action IterBinding="VoucherDetViewDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolGLSAppModuleDataControl"/>
+    <tree IterBinding="VoucherDetViewDetCRUDIterator" id="VoucherDetViewDetCRUD">
+      <nodeDefinition DefName="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView" Name="VoucherDetViewDetCRUD0">
+        <AttrNames>
+          <Item Value="txtGLCodeCreditDescription"/>
+          <Item Value="txtGlDescription"/>
+          <Item Value="txtCostCenter"/>
+          <Item Value="txtCostCenterDescription"/>
+          <Item Value="FcurrDebit"/>
+          <Item Value="FcurrCredit"/>
+          <Item Value="Narration"/>
+          <Item Value="CreditGlCode"/>
+          <Item Value="DebitGlCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="doSuperviseGLVoucher" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSuperviseGLVoucher" IsViewObjectMethod="true"
+                  DataControl="ERPSolGLSAppModuleDataControl"
+                  InstanceName="data.ERPSolGLSAppModuleDataControl.VoucherCRUD"
+                  ReturnName="data.ERPSolGLSAppModuleDataControl.methodResults.doSuperviseGLVoucher_ERPSolGLSAppModuleDataControl_VoucherCRUD_doSuperviseGLVoucher_result"/>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="LocCode">
+      <AttrNames>
+        <Item Value="LocCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="GlVType">
+      <AttrNames>
+        <Item Value="GlVType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Voucherseq">
+      <AttrNames>
+        <Item Value="Voucherseq"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="BankRefNo">
+      <AttrNames>
+        <Item Value="BankRefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherCRUDIterator" id="Payee">
+      <AttrNames>
+        <Item Value="Payee"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="VoucherCRUDIterator" StaticList="false" Uses="LovSalesterritoryid" id="Salesterritoryid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

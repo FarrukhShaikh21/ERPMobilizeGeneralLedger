@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="erpsolgls.erpsolglsmodel.erpsolglsam.ERPSolGLSAppModule">
+      <AppModuleConfig name="1913FECFBA4" JDBCName="ERPMobGLSConn" DeployPlatform="LOCAL" jbo.project="erpsolgls.erpsolglsmodel.ERPSolGLSModel" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="ERPSolGLSAppModuleLocal" ApplicationName="erpsolgls.erpsolglsmodel.erpsolglsam.ERPSolGLSAppModule" DBconnection="java:comp/env/jdbc/ERPMobGLSConnDS">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="erpsolgls.erpsolglsmodel.erpsolglsam.ERPSolGLSAppModule"/>
+         <Tester FullProxyInterfaceName="erpsolgls.erpsolglsmodel.erpsolglsam.common.ERPSolGLSAppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/ERPMobGLSConnDS" ns0:_testers_credentials_needed="false" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

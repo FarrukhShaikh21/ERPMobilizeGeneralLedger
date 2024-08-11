@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ChartOfAccountVoucherDetailGLCodeLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpsolgls.erpsolglsmodel.erpsolglsassoc.ChartOfAccountVoucherDetailGLCodeAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolgls.erpsolglsmodel.erpsolglslink.ChartOfAccountVoucherDetailGLCodeLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ChartOfAccView"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="ChartOfAccView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView.GlnatureOfAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView.GlbroadCategory"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView.GlcontrolAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView.GlsubControlAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.ChartOfAccView.GlsubsidaryAC"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="VoucherDetView"
+    Cardinality="-1"
+    Owner="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="VoucherDetView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView.GlbroadCategory"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView.GlcontrolAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView.GlnatureOfAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView.GlsubControlAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglsvo.VoucherDetView.GlsubsidaryAC"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolgls.erpsolglsmodel.ERPSolGLSModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

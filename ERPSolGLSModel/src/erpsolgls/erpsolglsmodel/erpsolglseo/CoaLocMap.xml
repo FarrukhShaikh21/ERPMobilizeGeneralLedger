@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CoaLocMap"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="COA_LOC_MAP"
+  AliasName="CoaLocMap"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="GlnatureOfAC"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="GLNATURE_OF_A_C"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GlbroadCategory"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="GLBROAD_CATEGORY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GlcontrolAC"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="GLCONTROL_A_C"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GlsubControlAC"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="GLSUB_CONTROL_A_C"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GlsubsidaryAC"
+    IsNotNull="true"
+    Precision="5"
+    ColumnName="GLSUBSIDARY_A_C"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Locationid"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="LOCATIONID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.Locationid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Createdby"
+    Precision="20"
+    ColumnName="CREATEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="COA_LOC_MAP"/>
+  <Attribute
+    Name="Modifiedby"
+    Precision="20"
+    ColumnName="MODIFIEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COA_LOC_MAP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="NUMBER"
+    TableName="COA_LOC_MAP"/>
+  <AccessorAttribute
+    Name="ChartOfAcc"
+    Association="erpsolgls.erpsolglsmodel.erpsolglsassoc.ChartOfAccountCoaLocMapAssoc"
+    AssociationEnd="erpsolgls.erpsolglsmodel.erpsolglsassoc.ChartOfAccountCoaLocMapAssoc.ChartOfAcc"
+    AssociationOtherEnd="erpsolgls.erpsolglsmodel.erpsolglsassoc.ChartOfAccountCoaLocMapAssoc.CoaLocMap"
+    Type="erpsolgls.erpsolglsmodel.erpsolglseo.ChartOfAccImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkCoaAllkeys"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_COA_ALLKEYS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlnatureOfAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlbroadCategory"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlcontrolAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlsubControlAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlsubsidaryAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.Locationid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_CoaLocMap">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0016261"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_COA_LOC_MAP"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlbroadCategory"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlcontrolAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlnatureOfAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlsubControlAC"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.CoaLocMap.GlsubsidaryAC"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolgls.erpsolglsmodel.ERPSolGLSModelBundle"/>
+  </ResourceBundle>
+</Entity>

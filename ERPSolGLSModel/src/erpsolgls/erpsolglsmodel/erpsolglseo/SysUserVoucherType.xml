@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysUserVoucherType"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SYS_USER_VOUCHER_TYPE"
+  AliasName="SysUserVoucherType"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Userid"
+    IsNotNull="true"
+    Precision="25"
+    ColumnName="USERID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SYS_USER_VOUCHER_TYPE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VoucherTypeId"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="VOUCHER_TYPE_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SYS_USER_VOUCHER_TYPE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Createdby"
+    Precision="20"
+    ColumnName="CREATEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SYS_USER_VOUCHER_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="SYS_USER_VOUCHER_TYPE"/>
+  <Attribute
+    Name="Modifiedby"
+    Precision="20"
+    ColumnName="MODIFIEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SYS_USER_VOUCHER_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="SYS_USER_VOUCHER_TYPE"/>
+  <AccessorAttribute
+    Name="VoucherType"
+    Association="erpsolgls.erpsolglsmodel.erpsolglsassoc.VoucherTypeSysUserVoucherTypeVoucherTypeAssoc"
+    AssociationEnd="erpsolgls.erpsolglsmodel.erpsolglsassoc.VoucherTypeSysUserVoucherTypeVoucherTypeAssoc.VoucherType"
+    AssociationOtherEnd="erpsolgls.erpsolglsmodel.erpsolglsassoc.VoucherTypeSysUserVoucherTypeVoucherTypeAssoc.SysUserVoucherType"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkSysUserVoucherType"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_SYS_USER_VOUCHER_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.SysUserVoucherType.Userid"/>
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.SysUserVoucherType.VoucherTypeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_SysUserVoucherType">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0015509"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_SYS_USER_VOUCHER_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolgls.erpsolglsmodel.erpsolglseo.SysUserVoucherType.VoucherTypeId"/>
+    </AttrArray>
+  </Key>
+</Entity>
